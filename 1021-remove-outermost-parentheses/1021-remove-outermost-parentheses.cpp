@@ -25,7 +25,7 @@ public:
             if(count==0){
                 count++;
             }
-            else if(count>0){
+            else{
                 if(s[i]=='('){
                     ans.push_back(s[i]);
                     count++;
