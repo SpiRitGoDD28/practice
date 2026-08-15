@@ -5,7 +5,7 @@ public:
         int count=0;
         string ans;
         for(int i=0;i<n;i++){
-            if(count==0){
+            /*if(count==0){
                 count++;
             }
             else{
@@ -21,6 +21,20 @@ public:
                     ans.push_back(s[i]);
                 } 
                 
+            }*/
+            if(count==0){
+                count++;
+            }
+            else if(count>0){
+                if(s[i]=='('){
+                    ans.push_back(s[i]);
+                    count++;
+                }
+                else{
+                    count--;
+                    if(count==0) continue;
+                    ans.push_back(s[i]);
+                }                
             }
         }
         return ans;
