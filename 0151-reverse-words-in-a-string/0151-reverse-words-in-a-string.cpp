@@ -1,7 +1,8 @@
 class Solution {
 public:
     string reverseWords(string s) {
-        vector<string> words;
+        //brute force
+        /*vector<string> words;
         string single;
         int n=s.size();
         int i=0;
@@ -16,7 +17,6 @@ public:
                 words.push_back(single);
                 single.clear();
             }
-           
         }
         reverse(words.begin(), words.end());
         string ans;
@@ -24,7 +24,30 @@ public:
             ans+= words[i];
             if(!ans.empty()) ans+=' ';
         }
+       
         ans.pop_back();
+        return ans;*/
+        //Optimal
+        string ans;
+        int n=s.size();
+        int i=n-1;
+        while(i>=0){
+            while(i>=0 && s[i]==' '){
+                i--;
+            }
+            if(i<0){
+                break;
+            }
+            int end=i;
+            while(i>=0 && s[i]!=' '){
+                i--;
+            }
+            ans.append(s, i+1, end-i);
+            ans+=' ';
+        }
+        if(!ans.empty()){
+            ans.pop_back();
+        }
         return ans;
     }
 };
