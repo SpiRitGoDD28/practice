@@ -10,7 +10,7 @@ public:
         if(right==-1){
             return "";
         }
-        num=num.substr(left, right-left+1); 
+        num=num.substr(left, right+1); 
         return num;
         
         
