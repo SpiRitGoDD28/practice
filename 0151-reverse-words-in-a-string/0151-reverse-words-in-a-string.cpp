@@ -28,26 +28,27 @@ public:
         ans.pop_back();
         return ans;*/
         //Optimal
-        string ans;
+
+        reverse(s.begin(),s.end());
         int n=s.size();
-        int i=n-1;
-        while(i>=0){
-            while(i>=0 && s[i]==' '){
-                i--;
+        int i=0;
+        string ans;
+        while(i<n){
+            while(s[i]==' '){
+                i++;
             }
-            if(i<0){
-                break;
+            if(i==n) break;
+            string words;
+            while(i<n && s[i]!=' '){
+                words+=s[i];
+                i++;
             }
-            int end=i;
-            while(i>=0 && s[i]!=' '){
-                i--;
-            }
-            ans.append(s, i+1, end-i);
-            ans+=' ';
+            reverse(words.begin(),words.end());
+            ans+=words;
+            if(!ans.empty()) ans+=' ';
         }
-        if(!ans.empty()){
-            ans.pop_back();
-        }
+        ans.pop_back();
         return ans;
+        
     }
 };
