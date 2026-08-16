@@ -11,7 +11,24 @@ public:
             tIndex[t[i]]=i+1;
         }
         return true;*/
-        unordered_map<char, char> mpp;
+        // double hashmap
+        unordered_map<char, int> sIndex;
+        unordered_map<char, int> tIndex;
+        for(int i=0; i<s.size(); i++){
+            if(sIndex.find(s[i])==sIndex.end()){
+                sIndex[s[i]]=i;
+            }
+            if(tIndex.find(t[i])==tIndex.end()){
+                tIndex[t[i]]=i;
+            }
+            if(sIndex[s[i]]!=tIndex[t[i]]){
+                return false;
+            }
+        }
+        return true;
+
+        //Single Hashmap
+        /*unordered_map<char, char> mpp;
         for(int i=0;i<s.size();i++){
             char charS= s[i];
             char charT= t[i];
@@ -29,6 +46,6 @@ public:
                 mpp[charS]=charT;
             }
         }
-        return true;
+        return true;*/
     }
 };
