@@ -1,16 +1,6 @@
 class Solution {
 public:
     bool isIsomorphic(string s, string t) {
-        /*vector<int>sIndex(260,0);
-        vector<int>tIndex(260,0);
-        for(int i=0; i<s.size();i++){
-            if(sIndex[s[i]]!=tIndex[t[i]]){
-                return false;
-            }
-            sIndex[s[i]]=i+1;
-            tIndex[t[i]]=i+1;
-        }
-        return true;*/
         // double hashmap
         unordered_map<char, int> sIndex;
         unordered_map<char, int> tIndex;
