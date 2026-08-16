@@ -6,7 +6,8 @@ public:
         }
         unordered_map<char, int>sMap;
         unordered_map<char, int>tMap;
-        int i=0;
+        sMap.reserve(26);
+        tMap.reserve(26);
         for(auto ch: s){
             sMap[ch]++;
         }
