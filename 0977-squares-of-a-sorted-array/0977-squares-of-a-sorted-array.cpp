@@ -6,7 +6,7 @@ public:
         int left=0;
         int right=n-1;
         while(left<=right){
-            if(nums[right]*nums[right]>nums[left]*nums[left]){
+            if(1LL*nums[right]*nums[right]>1LL*nums[left]*nums[left]){
                 ans.push_back(nums[right]*nums[right]);
                 right--;
             }
