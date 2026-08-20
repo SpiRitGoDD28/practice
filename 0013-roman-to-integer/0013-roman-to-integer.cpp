@@ -10,11 +10,12 @@ public:
        mpp['D']=500;
        mpp['M']=1000;
        long long sum=0;
-       for(int i=0; i<s.size();i++){
-        if(i+1< s.size() && mpp[s[i]]<mpp[s[i+1]]){
+       int n=s.size();
+       for(int i=0;i<n;i++){
+        if(i+1<n && mpp[s[i]] < mpp[s[i+1]]){
             sum-=mpp[s[i]];
         }
-        else if(mpp[s[i]]>=mpp[s[i+1]]){
+        else{//if(mpp[s[i]] >= mpp[s[i+1]]){
             sum+=mpp[s[i]];
         }
        }
