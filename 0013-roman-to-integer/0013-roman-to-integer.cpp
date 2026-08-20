@@ -11,9 +11,7 @@ public:
        mpp['M']=1000;
        long long sum=0;
        for(int i=0; i<s.size();i++){
-        //sum+=mpp[s[i]];
-        
-        if(i+1< s.size() && mpp[s[i]]<mpp[s[i+1]]){
+        if(i< s.size() && mpp[s[i]]<mpp[s[i+1]]){
             sum-=mpp[s[i]];
         }
         else if(mpp[s[i]]>=mpp[s[i+1]]){
