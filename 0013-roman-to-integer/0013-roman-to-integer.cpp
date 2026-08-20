@@ -14,7 +14,7 @@ public:
         if(i+1< s.size() && mpp[s[i]]<mpp[s[i+1]]){
             sum-=mpp[s[i]];
         }
-        else if(mpp[s[i]]>=mpp[s[i+1]]){
+        else{ //if(mpp[s[i]]>=mpp[s[i+1]]){
             sum+=mpp[s[i]];
         }
        }
