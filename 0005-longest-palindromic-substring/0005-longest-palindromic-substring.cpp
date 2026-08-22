@@ -14,7 +14,7 @@ public:
             int odd= midPoint(s, mid, mid);
             int even= midPoint(s, mid, mid+1);
             int maxLen= max(odd, even);
-            if(maxLen> end-start){
+            if(maxLen> end-start+1){
                 start= mid-(maxLen-1)/2;
                 end= mid+maxLen/2;
             }
