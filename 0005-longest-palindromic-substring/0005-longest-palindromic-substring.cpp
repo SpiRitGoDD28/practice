@@ -9,20 +9,16 @@ public:
     }
     string longestPalindrome(string s) {
         int n=s.size();
-        int start=0;
-        int end=0;
-        for(int centre=0; centre<n; centre++){
-            int odd= midPoint(s, centre, centre);
-            int even= midPoint(s, centre, centre+1);
+        int start=0, end=0;
+        for(int mid=0; mid<n; mid++){
+            int odd= midPoint(s, mid, mid);
+            int even= midPoint(s, mid, mid+1);
             int maxLen= max(odd, even);
-            if(maxLen>end-start){
-                start= centre-(maxLen-1)/2;
-                end= centre+maxLen/2;
+            if(maxLen> end-start){
+                start= mid-(maxLen-1)/2;
+                end= mid+maxLen/2;
             }
         }
-        
-        
         return s.substr(start, end-start+1);
-        
     }
 };
