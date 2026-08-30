@@ -27,7 +27,7 @@ public:
                 secondSmallest=nums[i];
             }
         }
-        int prod=max(largest*second*third, largest*smallest*secondSmallest);
+        long long prod=max(largest*second*third, largest*smallest*secondSmallest);
         return prod;
     }
 };
