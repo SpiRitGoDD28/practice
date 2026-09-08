@@ -27,7 +27,9 @@ public:
             temp=temp->next;
         }
         return head;*/
-        ListNode* temp=head;
+
+        //Iterative
+        /*ListNode* temp=head;
         ListNode* prev=NULL;
         while(temp!=NULL){
             ListNode* front=temp->next;
@@ -35,7 +37,15 @@ public:
             prev=temp;
             temp=front;
         }
-        return prev;
+        return prev;*/
+        if(head==NULL || head->next==NULL){
+            return head;
+        }
+        ListNode* newHead= reverseList(head->next);
+        ListNode* front=head->next;
+        front->next=head;
+        head->next=NULL;
+        return newHead;
         
     }
 };
