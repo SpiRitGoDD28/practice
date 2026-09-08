@@ -11,7 +11,7 @@
 class Solution {
 public:
     ListNode* reverseList(ListNode* head){
-        ListNode* current=head;
+        /*ListNode* current=head;
         stack<int> st;
         while(current!=NULL){
             st.push(current->val);
@@ -23,7 +23,16 @@ public:
             st.pop();
             current=current->next;
         }
-        return head;
+        return head;*/
+        ListNode* temp=head;
+        ListNode* newHead=NULL;
+        while(temp!=NULL){
+            ListNode* front=temp->next;
+            temp->next=newHead;
+            newHead=temp;
+            temp=front;
+        }
+        return newHead;
     }
     bool isPalindrome(ListNode* head) {
         ListNode* slow=head;
