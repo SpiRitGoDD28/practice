@@ -20,11 +20,7 @@ public:
             slow=slow->next;
             fast=fast->next;
         }
-        if(fast==NULL){
-            ListNode* newHead=head->next;
-            delete head;
-            return newHead;
-        }
+        if(fast==NULL) return head->next;
         ListNode* delNode=slow->next;
         slow->next=slow->next->next;
         delete delNode;
