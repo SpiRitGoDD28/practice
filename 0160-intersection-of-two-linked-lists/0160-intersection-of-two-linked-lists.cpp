@@ -24,7 +24,7 @@ public:
             temp=temp->next;
         }
         return NULL;*/
-        if(headA==NULL && headB==NULL) return NULL;
+        if(headA==NULL || headB==NULL) return NULL;
         ListNode* t1=headA;
         ListNode* t2=headB;
         while(t1!=t2){
